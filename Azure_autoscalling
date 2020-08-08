@@ -1,2 +1,5 @@
 "autoScale": {
                            "formula": "$CurTime = time();$WorkHours = $CurTime.hour>=8 && $CurTime.hour<18;$IsWeekday = $CurTime.weekday>=1 && $CurTime.weekday<=5;$IsWorkingWeekdayHour = $WorkHours && $IsWeekday;$TargetDedicated=$IsWorkingWeekdayHour ? 5 : 1;$TargetLowPriorityNodes = $IsWorkingWeekdayHour ? 0 : 1;",
+                                  
+                         "evaluationInterval": "PT15M"
+                     }
