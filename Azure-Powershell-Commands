@@ -1,0 +1,17 @@
+new-azvirtualnetwork --- To create virtualnetwork
+
+Get-Command "*network*"  -- To find command which having network word in it.
+Get-Command :new*network*" 
+
+$NewVnet = new-AzVirtualNetwork -Name AlphaBeta ResourceGroupName Tech_IT_DEPT -Location eastus AddressPrefix "10.20.0.0/16" --- Create a varible to create virtal network.
+$NewVnet ---- To check the its value.
+
+Create Subnet now using variable.
+$Netsubnet = Add-AzVirtualNetworkSubnetConfig -Name Private_Subnet -VirtualNetwork $NewVnet AddressPrefix 10.20.30.0/24 
+$newsubnet -- To chekc value
+
+Get-AzVirtualNetworkSubnetConfig -Name -Private_Subnet -VirtualNetwork -$NewVnet -- To check all details
+
+To associate subnet to vNet
+
+$newsubnet | Set-AzVirtualNetwork
