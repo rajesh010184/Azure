@@ -15,3 +15,21 @@ Get-AzVirtualNetworkSubnetConfig -Name -Private_Subnet -VirtualNetwork -$NewVnet
 To associate subnet to vNet
 
 $newsubnet | Set-AzVirtualNetwork
+
+##### Creatin storage account with Powershell. #####
+
+#Create storage account with PS
+# Create a storage account with PS 
+
+$location = "westus"
+$rgname = "payroll"
+New-AzResourceGroup -Name $rgname -Location $location --- To create azure resource group
+
+Get-AzResourceGroup
+
+$storageaccountname = "newstorageaccount" --- For creating variable.
+
+New-AzStorageAccount -Name $storageaccountname -Location $location -skuName Premium_LRS  -ResourceGRoupName $rgname -kind StorageV2  -- To create storage account
+
+Get-AzStorageAccount
+################################
